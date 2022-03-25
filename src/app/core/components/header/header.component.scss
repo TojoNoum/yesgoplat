@@ -1,0 +1,84 @@
+$primary:#232b3b;
+$secondary:#36435c;
+$thirdly: aliceblue;
+.first-header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    z-index: 10000;
+}
+
+
+.nav-style{
+    background-color: $primary;
+}
+
+.tm-top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    z-index: 10000;
+    transition: all 0.3s ease-in-out;
+    height: 90px;
+    background: $primary;
+}
+
+
+.nav-link{
+    color: #999;
+    transition: all 1s ease-in-out;
+}
+
+.nav-style .navbar-toggler,
+.nav-link:hover, 
+.nav-link:active, 
+.nav-link:focus {
+    color: white;
+    background-color: $secondary;
+    outline: none;
+    border-color: $secondary;
+}
+
+
+/*effet des text sur le Logo*/
+
+.font-styler{
+    // font-family: "Inter", sans-serif;
+    font-family: "Lucida Handwriting","Brush Script MT", Cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.logo{
+    font-size: 2rem;
+    font-weight: 900;
+    background-color: $primary;
+    border-radius: 10%;
+    color: $thirdly;
+    display: block;
+    padding: 0.5em;
+}
+
+.logo:nth-child(2) {
+    position: absolute;
+    background-color: $thirdly;
+    border-radius: 40%;
+    color: $primary;
+    clip-path: inset(-1% -1% 50% -1%);
+}
+
+.font-styler:after,
+.logo:before {
+    box-sizing: border-box;
+}
+
+.btn:focus{
+    box-shadow: none;
+    // transform: scale(0);
+}  
