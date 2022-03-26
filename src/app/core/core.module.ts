@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
-import { AngularMaterialModule } from '../angular-material/angular-material.module';
 import { FooterComponent } from './components/footer/footer.component';
+import {MatIconModule} from '@angular/material/icon';
+import {HttpClientModule } from '@angular/common/http';
 
 
 
@@ -14,6 +15,8 @@ import { FooterComponent } from './components/footer/footer.component';
   ],
   imports: [
     CommonModule,
+    MatIconModule,
+    HttpClientModule
   ],
   exports: [
     HeaderComponent,

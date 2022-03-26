@@ -1,6 +1,18 @@
 $primary:#232b3b;
 $secondary:#36435c;
 $thirdly: aliceblue;
+
+$breakpoints: (
+    mobile-sm: 576px,
+    mobile: 992px
+);
+
+@mixin mobile-only ($breakpoint: map-get($breakpoints, mobile)){
+     @media screen and (max-width: $breakpoint){
+        @content; 
+    }
+}
+
 .first-header{
     position: absolute;
     top: 0;
@@ -82,3 +94,36 @@ $thirdly: aliceblue;
     box-shadow: none;
     // transform: scale(0);
 }  
+
+.display{
+    &-none{
+        display: none;
+    }
+    &-block{
+        display:block;
+    }
+}
+
+//css Contact icon
+
+.contact{
+    padding-right: 18%;
+    @include mobile-only{
+        padding-right: 0;
+    }
+}
+.iconContact{
+    border:none;
+    transition: 1s ease-out;
+    color: black;
+    :hover{
+        transform: translateY(-0.25rem);
+        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+        border-radius: 35px;
+        color: black;
+    }
+    &-size{
+        font-size: 45px;
+        border-radius: 35px;
+    }
+}

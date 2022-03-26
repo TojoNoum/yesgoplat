@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  menu!: boolean;
+  buttonContent!: string;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.menu=false;
+    this.buttonContent = "Menu";
     this.onScroll();
   }
   onScroll(){
@@ -22,6 +27,20 @@ export class HeaderComponent implements OnInit {
         document.querySelector(".nav-style")?.classList.add("mt-5");
       }
     });
+  }
+
+  onMenuActive(){
+
+    if(this.buttonContent === "Menu"){
+      this.menu = true;
+      this.buttonContent = "Me contacter";
+      console.log("oui");
+    }else{
+      this.menu = false;
+      this.buttonContent = "Menu";
+      console.log("non");
+    }
+    
   }
   
 
