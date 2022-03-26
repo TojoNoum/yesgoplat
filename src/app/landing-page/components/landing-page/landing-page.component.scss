@@ -8,11 +8,12 @@ $color-secondary:#36435c;
 $color-thirdly: aliceblue;
 
 $breakpoints: (
+    mobile-sm: 576px,
     mobile: 992px
 );
 
-@mixin mobile-only {
-     @media screen and (max-width: map-get($breakpoints, mobile)){
+@mixin mobile-only ($breakpoint: map-get($breakpoints, mobile)){
+     @media screen and (max-width: $breakpoint){
         @content; 
     }
 }
@@ -65,13 +66,39 @@ section{
                 animation-name: cardCoverOpen;
                 animation-duration: 2s;
                 top: 74%;
+                @keyframes cardCoverOpen{
+                    0% { top:25%; opacity: 1;}
+                    100% { top:74%; opacity: 1;}
+                }
                 @include mobile-only{
                     top: 72%;
-                };
+                    @keyframes cardCoverOpen{
+                        0% { top:17.6%; opacity: 1;}
+                        100% { top:72%; opacity: 1;}
+                    }
+                }
+
             }
             &--close{      
                 animation-name: cardCoverClose;
                 animation-duration: 2s;
+                @keyframes cardCoverClose{
+                    0% { top:74%; opacity: 1;}
+                    100% { top:25%; opacity: 1;}
+                }
+                @include mobile-only {
+                    @keyframes cardCoverClose{
+                        0% { top:72%; opacity: 1;}
+                        100% { top:16.6%; opacity: 1;}
+                    }
+                }
+                @include mobile-only (map-get($breakpoints, mobile-sm)){
+                    @keyframes cardCoverClose{
+                        0% { top:72%; opacity: 1;}
+                        100% { top:17.5%; opacity: 1;}
+                    }
+                }
+
             }
 
             
@@ -80,14 +107,6 @@ section{
     
 }
 
-@keyframes cardCoverOpen{
-    0% { top:25%; opacity: 1;}
-    100% { top:74%; opacity: 1;}
-}
-@keyframes cardCoverClose{
-    0% { top:74%; opacity: 1;}
-    100% { top:25%; opacity: 1;}
-}
 
 
 .welcome{
