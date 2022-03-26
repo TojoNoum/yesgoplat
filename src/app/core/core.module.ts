@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import {MatIconModule} from '@angular/material/icon';
-import {HttpClientModule } from '@angular/common/http';
 
 
 
@@ -14,9 +12,7 @@ import {HttpClientModule } from '@angular/common/http';
     FooterComponent
   ],
   imports: [
-    CommonModule,
-    MatIconModule,
-    HttpClientModule
+    CommonModule
   ],
   exports: [
     HeaderComponent,

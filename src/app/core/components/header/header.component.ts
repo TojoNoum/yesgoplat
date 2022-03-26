@@ -34,11 +34,9 @@ export class HeaderComponent implements OnInit {
     if(this.buttonContent === "Menu"){
       this.menu = true;
       this.buttonContent = "Me contacter";
-      console.log("oui");
     }else{
       this.menu = false;
       this.buttonContent = "Menu";
-      console.log("non");
     }
     
   }
