@@ -35,7 +35,6 @@ $breakpoints: (
     padding: 0;
     z-index: 10000;
     transition: all 0.3s ease-in-out;
-    height: 90px;
     background: $primary;
 }
 
@@ -125,5 +124,40 @@ $breakpoints: (
     &-size{
         font-size: 45px;
         border-radius: 35px;
+    }
+}
+
+.btn{
+    &-futuriste{
+        background: radial-gradient(rgba(13,202,240,0.5), transparent), url("../../../../assets/img/bg-btn-futurist1.gif");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 228%;
+        width: 100px;
+        height: 100px;
+        color: rgba(25,250,255,1);
+        font-size: 0.7rem;
+        font-family: transfrm;
+        letter-spacing: 2px;
+        border-radius: 50%;
+        transition: 500ms;
+        &:hover{
+            transform: scale(1.3);
+            transition: 500ms;
+        }
+        &:focus, &:active{
+            background: radial-gradient(rgba(35,43,59,0.5), rgba(13,202,240,0.5)), url("../../../../assets/img/bg-btn-futurist1.gif");
+            background-position: center;
+            background-repeat: no-repeat;
+            animation-name: btn-futuriste-active;
+            animation-duration: 500ms;
+            @keyframes btn-futuriste-active {
+                0%{background-size: 228%;}
+                50%{background-size: 200%;}
+                100%{background-size: 600%;}
+                
+            }
+        
+        }
     }
 }
