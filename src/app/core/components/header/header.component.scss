@@ -1,6 +1,7 @@
 $color-primary:#232b3b;
 $color-secondary:#36435c;
 $color-thirdly: aliceblue;
+$color-word-futurist: rgba(25,250,255,1);
 
 $breakpoints: (
     mobile-sm: 576px,
@@ -47,15 +48,15 @@ $breakpoints: (
 
 .nav-link{
     color: #999;
-    transition: all 1s ease-in-out;
+    transition: all 300ms ease-in-out;
 }
 
 .nav-style .navbar-toggler,
 .nav-link:hover, 
 .nav-link:active, 
 .nav-link:focus {
-    color: white;
-    background-color: $color-secondary;
+    color: $color-word-futurist;
+    @include bg-screen-tactil();
     outline: none;
     border-color: $color-secondary;
 }
@@ -98,7 +99,7 @@ $breakpoints: (
     box-sizing: border-box;
 }
 
-.btn:focus{
+.btn:focus, .navbar-toggler:focus{
     box-shadow: none;
     // transform: scale(0);
 }  

@@ -1,6 +1,8 @@
 $color-primary:#232b3b;
 $color-secondary:#36435c;
 $color-thirdly: aliceblue;
+$color-word-futurist: rgba(25,250,255,1);
+
 @mixin bg-screen-tactil ($principal-color: rgba(13,202,240,0.5)){
     background: radial-gradient($principal-color, transparent), $color-primary;
 }
