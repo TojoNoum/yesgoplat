@@ -7,19 +7,76 @@ $color-word-futurist: rgba(25,250,255,1);
     background: radial-gradient($principal-color, transparent), $bg-color;
 }
 
+$breakpoints: (
+    mobile-sm: 576px,
+    mobile-md: 768,
+    mobile: 992px
+);
+
+@mixin mobile-only ($breakpoint: map-get($breakpoints, mobile)){
+     @media screen and (max-width: $breakpoint){
+        @content; 
+    }
+}
+
 footer{
-    @include bg-screen-tactil;
+    @include bg-screen-tactil(rgba(13,202,240,0.5), url("../../../../assets/img/bg-footer-verticale.jpg"));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 130% 135%;
     min-height: 350px;
     border-top: 2px solid rgba(13,202,240,0.5);
     border-left: 2px solid rgba(13,202,240,0.5);
     margin-top: 1px;
     margin-left: 1px;
     box-shadow: -3px -3px 5px  rgba(13,202,240,0.8);
+
+    @include mobile-only{
+        @include bg-screen-tactil(rgba(13,202,240,0.5), url("../../../../assets/img/bg-footer-horizontale.jpg"));
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 130% 135%;
+    }
 }
 
 .card{
     width: 350px;
     height: 300px;
-    border: 2px solid rgba(13,202,240,0.5);
+    border: 3px solid rgba(13,202,240,0.6);
     background-color: transparent;
+}
+
+.btn{
+    &-futuriste{
+        background: radial-gradient(rgba(13,202,240,0.7), transparent), url("../../../../assets/img/animation-footer.gif");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 250%;
+        width: 100px;
+        height: 100px;
+        color: rgba(25,250,255,1);
+        font-size: 0.7rem;
+        font-family: transfrm;
+        letter-spacing: 2px;
+        transition: 500ms;
+        z-index: 100;
+
+        &:nth-child(1){
+            top: 35%;
+            left: -25px;
+            border-top-left-radius: none;
+            border-bottom-left-radius: none;
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+        }
+        &:nth-child(2){
+            top: 35%;
+            right: -25px;
+            border-top-left-radius: 50%;
+            border-bottom-left-radius: 50%;
+            border-top-right-radius: none;
+            border-bottom-right-radius: none;
+        }
+ 
+    }
 }

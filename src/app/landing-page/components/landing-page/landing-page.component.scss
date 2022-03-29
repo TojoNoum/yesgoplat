@@ -56,6 +56,7 @@ section{
         @include card-style;
         &-cover{
             @include card-style;
+            z-index: 101;
             transform: scale(0.99);
             box-shadow: 0 0 0px  $color-secondary;
             @include linear-gr($color-secondary);
