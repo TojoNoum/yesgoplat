@@ -1,11 +1,17 @@
-$primary:#232b3b;
-$secondary:#36435c;
-$thirdly: aliceblue;
+$color-primary:#232b3b;
+$color-secondary:#36435c;
+$color-thirdly: aliceblue;
 
 $breakpoints: (
     mobile-sm: 576px,
+    mobile-md: 768,
     mobile: 992px
 );
+
+@mixin bg-screen-tactil ($principal-color: rgba(13,202,240,0.5)){
+    background: radial-gradient($principal-color, transparent), $color-primary;
+}
+
 
 @mixin mobile-only ($breakpoint: map-get($breakpoints, mobile)){
      @media screen and (max-width: $breakpoint){
@@ -24,7 +30,7 @@ $breakpoints: (
 
 
 .nav-style{
-    background-color: $primary;
+    background-color: $color-primary;
 }
 
 .tm-top-bar {
@@ -35,7 +41,7 @@ $breakpoints: (
     padding: 0;
     z-index: 10000;
     transition: all 0.3s ease-in-out;
-    background: $primary;
+    background: $color-primary;
 }
 
 
@@ -49,9 +55,12 @@ $breakpoints: (
 .nav-link:active, 
 .nav-link:focus {
     color: white;
-    background-color: $secondary;
+    background-color: $color-secondary;
     outline: none;
-    border-color: $secondary;
+    border-color: $color-secondary;
+}
+.nav-item{
+    height: 100%;
 }
 
 
@@ -69,18 +78,18 @@ $breakpoints: (
 .logo{
     font-size: 2rem;
     font-weight: 900;
-    background-color: $primary;
+    background-color: $color-primary;
     border-radius: 10%;
-    color: $thirdly;
+    color: $color-thirdly;
     display: block;
     padding: 0.5em;
 }
 
 .logo:nth-child(2) {
     position: absolute;
-    background-color: $thirdly;
+    background-color: $color-thirdly;
     border-radius: 40%;
-    color: $primary;
+    color: $color-primary;
     clip-path: inset(-1% -1% 50% -1%);
 }
 
@@ -160,4 +169,27 @@ $breakpoints: (
         
         }
     }
+    &-bg{
+        &--info{
+            &:hover,&:active,&:focus{
+                @include bg-screen-tactil(#0dcaf0);
+            }   
+        }
+        &--danger{
+            &:hover,&:active,&:focus{
+                @include bg-screen-tactil(#dc3545);
+            }  
+        }
+        &--warning{
+            &:hover,&:active,&:focus{
+                @include bg-screen-tactil(#ffc107);
+            }  
+        }
+        &--secondary{
+            &:hover,&:active,&:focus{
+                @include bg-screen-tactil(#6c757d);
+            }  
+        }
+    }
 }
+

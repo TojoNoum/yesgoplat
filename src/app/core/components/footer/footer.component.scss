@@ -1,8 +1,13 @@
 $color-primary:#232b3b;
 $color-secondary:#36435c;
 $color-thirdly: aliceblue;
+@mixin bg-screen-tactil ($principal-color: rgba(13,202,240,0.5)){
+    background: radial-gradient($principal-color, transparent), $color-primary;
+}
 
 footer{
-    background: $color-primary;
-    height: 300px;
+    @include bg-screen-tactil;
+    min-height: 350px;
+    border-top: 2px solid rgba(13,202,240,0.5);
+    border-left: 2px solid rgba(13,202,240,0.5);
 }
