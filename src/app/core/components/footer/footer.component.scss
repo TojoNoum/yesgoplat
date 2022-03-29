@@ -3,8 +3,8 @@ $color-secondary:#36435c;
 $color-thirdly: aliceblue;
 $color-word-futurist: rgba(25,250,255,1);
 
-@mixin bg-screen-tactil ($principal-color: rgba(13,202,240,0.5)){
-    background: radial-gradient($principal-color, transparent), $color-primary;
+@mixin bg-screen-tactil ($principal-color: rgba(13,202,240,0.5), $bg-color: $color-primary){
+    background: radial-gradient($principal-color, transparent), $bg-color;
 }
 
 footer{
@@ -12,4 +12,14 @@ footer{
     min-height: 350px;
     border-top: 2px solid rgba(13,202,240,0.5);
     border-left: 2px solid rgba(13,202,240,0.5);
+    margin-top: 1px;
+    margin-left: 1px;
+    box-shadow: -3px -3px 5px  rgba(13,202,240,0.8);
+}
+
+.card{
+    width: 350px;
+    height: 300px;
+    border: 2px solid rgba(13,202,240,0.5);
+    background-color: transparent;
 }
