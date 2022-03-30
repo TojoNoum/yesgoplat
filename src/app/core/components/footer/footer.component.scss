@@ -27,9 +27,6 @@ footer{
     min-height: 350px;
     border-top: 2px solid rgba(13,202,240,0.5);
     border-left: 2px solid rgba(13,202,240,0.5);
-    margin-top: 1px;
-    margin-left: 1px;
-    box-shadow: -3px -3px 5px  rgba(13,202,240,0.8);
 
     @include mobile-only{
         @include bg-screen-tactil(rgba(13,202,240,0.5), url("../../../../assets/img/bg-footer-horizontale.jpg"));
@@ -52,8 +49,8 @@ footer{
         background-position: center;
         background-repeat: no-repeat;
         background-size: 250%;
-        width: 100px;
-        height: 100px;
+        width: 70px;
+        height: 70px;
         color: rgba(25,250,255,1);
         font-size: 0.7rem;
         font-family: transfrm;
