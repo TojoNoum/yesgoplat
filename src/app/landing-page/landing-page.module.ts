@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { AnimationsModule } from '../animations/animations.module';
 
 
 
@@ -9,7 +10,8 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
     LandingPageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AnimationsModule
   ]
 })
 export class LandingPageModule { }

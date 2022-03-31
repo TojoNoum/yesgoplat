@@ -1,0 +1,133 @@
+/* Mascotte Robot */
+
+.robotMascot{
+	width: 200px;
+	height: 200px;
+	background: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation: robotMascotMovement 2s ease-out infinite alternate; 
+
+    @keyframes robotMascotMovement {
+        from {transform: translateY(0) rotateZ(0);}
+        50%  {transform: translateY(-5px) rotateZ(-2deg);}
+        to   {transform: translateY(-10px) rotateZ(2deg);}
+   
+    }
+
+    &-body{
+        color: rgba(25,255,255,1);
+        font-size: 2rem;
+        line-height: 0.8rem;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 85px;
+        height: 85px;
+        border: 2px solid rgba(25,255,255,0.5);
+        border-top-right-radius: 30%;
+        border-top-left-radius: 30%;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+        background: radial-gradient(farthest-corner at 0% 280%, #232b3b 55%, transparent 55%),
+                    radial-gradient(farthest-corner at 98% 280%, #232b3b 55%, transparent 55%),
+                    radial-gradient(farthest-corner at 260% 0%, #232b3b 55%, transparent 55%),
+                    radial-gradient(farthest-corner at -170% 0%, #232b3b 55%, transparent 55%),
+                    radial-gradient(rgba(255,255,255,0.1), rgba(25,255,255,0.8)), url("../../../../assets/img/font-robot-mascot.gif");
+        background-size: 100%;
+    }
+
+    &-hand{
+        background: radial-gradient(rgba(25,255,255,0.5), #232b3b 50%);
+        width: 20px;
+        height: 15px;
+        border: 2px solid rgba(25,255,255,0.5);
+        position: relative;
+        top: 5px;
+
+        &--left{
+            border-top-right-radius: 30%;
+            border-top-left-radius: 50%;
+            border-bottom-right-radius: 30%;
+            border-bottom-left-radius: 50%;
+            animation: handLeftHello 6s ease-out infinite alternate;
+
+            @keyframes handLeftHello {
+                0% {transform: rotateX(0) rotateZ(0); top: 5px; left: 0;}
+                30% {transform: rotateX(0) rotateZ(0); top: 5px; left: 0;}
+                50% {transform: rotateX(33deg) rotateZ(30deg); top:-33px; left: -1.5px;}
+                53% {transform: rotateX(33deg) rotateZ(20deg); top:-30px; left: -1.5px;}
+                55% {transform: rotateX(33deg) rotateZ(30deg); top:-33px; left: -1.5px;}
+                58%	{transform: rotateX(33deg) rotateZ(20deg); top:-30px; left: -1.5px;}
+                60%	{transform: rotateX(33deg) rotateZ(30deg); top:-33px; left: -1.5px;}
+                63%	{transform: rotateX(33deg) rotateZ(20deg); top:-30px; left: -1.5px;}
+                65% {transform: rotateX(33deg) rotateZ(30deg); top:-33px; left: 1.5px;}
+                75% {transform: rotateX(33deg) rotateZ(30deg); top:-33px; left: 1.5px;}
+                100% {transform: rotateX(33deg) rotateZ(30deg); top:-33px; left: 1.5px;}
+                
+            }
+        }
+
+        &--right{
+            border-top-right-radius: 50%;
+            border-top-left-radius: 30%;
+            border-bottom-right-radius: 50%;
+            border-bottom-left-radius: 30%;
+            animation: handRight 6s ease infinite alternate;
+        
+            @keyframes handRight{
+                0% {transform: rotateX(0) rotateZ(0); top: 5px; left: 0;}
+                30% {transform: rotateX(0) rotateZ(0); top: 5px; left: 0;}
+                50% {transform: rotateX(17deg) rotateZ(15deg); top: 5px; left: 1px;}
+                100% {transform: rotateX(17deg) rotateZ(15deg); top: 5px; left: 1px;}
+            }
+        
+        }
+    }
+
+    &-foot{
+        position: absolute;
+        background: radial-gradient(rgba(25,255,255,0.5), #232b3b 50%);
+        width: 20px;
+        height: 25px;
+        border: 2px solid rgba(25,255,255,0.5);
+        border-top-right-radius: 30%;
+        border-top-left-radius: 30%;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+
+        &--left{
+            top:136.5px;
+            left: 59px;
+            transform: rotateZ(27deg);
+            animation: footLeft 600ms ease-out infinite alternate;
+            
+            @keyframes footLeft{
+                from {transform: rotateZ(27deg);top:136.5px; left: 59px;}
+                to {transform: rotateZ(20deg); 	top:142px; left: 66px;}
+            }
+        }
+
+        &--right{
+            top:136.5px;
+            left: 117px;
+            transform: rotateZ(-27deg);
+            animation: footRight 600ms ease-out infinite alternate;
+        
+            @keyframes footRight{
+                from {transform: rotateZ(-27deg);top:136.5px; left: 117px;}
+                to {transform: rotateZ(-20deg); top:142px; left: 111px;}
+            }
+        }
+    }
+    &-eyes{
+        display: flex;
+        justify-content: space-between;
+        width: 40px;
+    }
+}
+
+/* Mascotte Robot */
