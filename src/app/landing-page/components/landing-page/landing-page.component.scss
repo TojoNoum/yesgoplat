@@ -11,6 +11,9 @@ $breakpoints: (
     mobile-sm: 576px,
     mobile: 992px
 );
+@mixin bg-screen-tactil ($principal-color: rgba(13,202,240,0.5), $bg-color: $color-primary){
+    background: radial-gradient($principal-color, transparent), $bg-color;
+}
 
 @mixin mobile-only ($breakpoint: map-get($breakpoints, mobile)){
      @media screen and (max-width: $breakpoint){
@@ -50,7 +53,7 @@ section{
     };
 
     .card{
-        background-color: $color-thirdly;
+        @include bg-screen-tactil;
         box-shadow: 0 0 40px  $color-secondary;
         border: 10px solid $color-primary;
         @include card-style;
